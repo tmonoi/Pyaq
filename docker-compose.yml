@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  tf:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/usr/src/app/:delegated
+    ports: 
+      - 8888:8888
+    command: 'tail -f /dev/null'
+    working_dir: /usr/src/app/
